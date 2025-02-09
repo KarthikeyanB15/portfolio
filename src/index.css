@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header #menu-toggle {
+  display: none
+}
+
+.profile_img {
+  width: 150px;
+  height: 210px;
+  border-radius: 5%;
+}
+
+.home {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+header {
+  max-width: 600px;
+  margin: auto;
+  padding: 16px 0
+}
+
+header nav {
+  background-color: #fff
+}
+
+header nav ul {
+  display: flex;
+  justify-content: start;
+  gap: 32px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0
+}
+
+header nav .nav-wrapper {
+  display: flex;
+  justify-content: space-between
+}
+
+.hamburger-btn,.close-btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  box-shadow: 0 0 24px rgba(0,0,0,.25);
+  border-radius: 50%;
+  background-color: #fff;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  cursor: pointer;
+  overflow: hidden
+}
+
+.hamburger-btn #ham,.hamburger-btn #close {
+  position: absolute;
+  transition: all .3s
+}
+
+header nav a {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  font-weight: 300
+}
+
+header nav a.active {
+  color: hwb(194 0% 0%)
+}
+
+@media only screen and (max-width: 560px) {
+  body {
+    margin: 10px;
+  }
+
+  .hamburger-btn {
+      display:flex
+  }
+
+  .nav-container {
+      width: 98%;
+      height: 100vh;
+      position: fixed;
+      top: -100vh;
+      left: 0;
+      flex-direction: column;
+      transition: top .3s;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+  }
+
+  .nav-wrapper {
+    flex: 1;
+  }
+
+  .nav-container ul {
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 48px
+  }
+
+  .nav-container .greeting {
+      display: block
+  }
+
+
+  body:has(#menu-toggle:checked) {
+      height: 100vh;
+      overflow: hidden
+  }
+
+  #menu-toggle:not(:checked)+.nav-container {
+      top: -100vh
+  }
+
+  #menu-toggle:checked~.nav-container {
+      top: 0
+  }
+
+  #menu-toggle:not(:checked)~.hamburger-btn #ham {
+      right: 8px;
+      transform: scale(1)
+  }
+
+  #menu-toggle:not(:checked)~.hamburger-btn #close {
+      right: 30px;
+      transform: scale(0)
+  }
+
+  #menu-toggle:checked~.hamburger-btn #ham {
+      right: -30px;
+      transform: scale(0)
+  }
+
+  #menu-toggle:checked~.hamburger-btn #close {
+      right: 12px;
+      transform: scale(1)
+  }
+}
