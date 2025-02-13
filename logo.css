@@ -1,0 +1,84 @@
+
+.container {
+    height: 50px;
+    width: 100px;
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .head {
+    width: 100%;
+    height: 100%;
+    background: #3ddc84;
+    border-radius: 200px 200px 3px 3px;
+  }
+  
+  .left-eye,
+  .right-eye {
+    position: absolute;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    animation: eyes-move 2s infinite;
+  }
+  
+  @keyframes eyes-move {
+    50% {
+      transform: translateY(20px) scaleY(0.8);
+    }
+  }
+  
+  .left-eye {
+    left: 25px;
+  }
+  
+  .right-eye {
+    right: 25px;
+  }
+  
+  .left-antenna,
+  .right-antenna {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 30px;
+    border-radius: 18px;
+    background: #3ddc84;
+    transform-origin: bottom;
+  }
+  
+  .left-antenna {
+    left: 25px;
+    transform: rotate(-25deg);
+    animation: left-antenna 1.5s infinite 0.3s;
+  }
+  
+  @keyframes left-antenna {
+    0%,
+    100% {
+      transform: rotate(-25deg);
+    }
+  
+    50% {
+      transform: rotate(-40deg);
+    }
+  }
+  
+  .right-antenna {
+    right: 25px;
+    transform: rotate(25deg);
+    animation: right-antenna 2s infinite;
+  }
+  
+  @keyframes right-antenna {
+    0%,
+    100% {
+      transform: rotate(25deg);
+    }
+  
+    50% {
+      transform: rotate(40deg);
+    }
+  }
